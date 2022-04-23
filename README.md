@@ -79,4 +79,4 @@ Configuration options list:
 ## Credits
 
 `ngx-scroll-view` is built by **Ruben Santibañez Acosta**. Thanks to him for the great work!# ngx-scroll-view
-# ngx-scroll-view
+
