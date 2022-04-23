@@ -25,11 +25,11 @@ Once installed you need to import the main module:
 
 
 ```ts
-import {NgxScrollView} from 'ngx-scroll-view';
+import {NgxScrollViewModule} from 'ngx-scroll-view';
 
 @NgModule({
   declarations: [AppComponent, ...],
-  imports: [NgxScrollView],  
+  imports: [NgxScrollViewModule],  
   bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -78,5 +78,5 @@ Configuration options list:
 
 ## Credits
 
-`ngx-scroll-view` is built by **Ruben Santibañez Acosta**. Thanks to him for the great work!# ngx-scroll-view
+`ngx-scroll-view` is built by **Ruben Santibañez Acosta**. Thanks to him for the great work!
 
