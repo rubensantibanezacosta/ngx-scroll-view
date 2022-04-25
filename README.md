@@ -12,7 +12,7 @@ Ngx scroll view is a Typescript library for easily animating elements as they en
 
 ## Installation
 
-Install above dependencies via *npm*. In particular for `ScrollReveal JS`, run:
+Install above dependencies via *npm*, run:
 
 ```shell
 npm install --save ngx-scroll-view
