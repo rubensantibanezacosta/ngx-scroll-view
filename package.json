@@ -1,10 +1,11 @@
 {
   "name": "ngx-scroll-view",
   "description": "Easily add show animations when scroll to an Angular project.",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "Ruben Santibanez Acosta (https://github.com/rubensantibanezacosta)",
   "repository": "https://github.com/rubensantibanezacosta/ngx-scroll-view",
   "homepage": "https://github.com/rubensantibanezacosta/ngx-scroll-view",
+  "keywords": ["scroll", "animation", "ngx", "angular", "scroll-view", "appear","show"],
   "bugs": {
     "email": "rubensantibanezacosta@gmail.com"
   },
