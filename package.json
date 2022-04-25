@@ -15,7 +15,6 @@
     "@angular/core": "^13.3.0"
   },
   "dependencies": {
-    "ngx-scroll-view": "^0.0.1",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

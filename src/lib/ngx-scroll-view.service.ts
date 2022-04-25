@@ -13,11 +13,9 @@ export class NgxScrollViewService {
 
   basicAppear(element: HTMLElement, configObject: ConfigObject) {
     element.setAttribute("data", this.counter.toString());
-    console.log(this.counter)
     let dynamicStyles = null;
 
     function addAnimation(element) {
-      console.log("adding animation");
       if (!dynamicStyles) {
         dynamicStyles = document.createElement('style');
         dynamicStyles.type = 'text/css';
@@ -56,7 +54,6 @@ export class NgxScrollViewService {
         break;
     }
     
-    console.log(translate, distance);
     addAnimation(`
                 @keyframes slideInAppear${this.counter} {
                                   0% {
