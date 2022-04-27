@@ -82,6 +82,7 @@ You can add event listeners like Angular native event listeners, and then you ca
 ```
 
 Inside **$event** parameter, you will have the element that is triggering the listeners. 
+
 ---
 
 ## Credits
