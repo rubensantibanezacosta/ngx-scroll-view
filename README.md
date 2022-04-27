@@ -9,7 +9,7 @@ Ngx scroll view is a Typescript library for easily animating elements as they en
 ## Versions
 
 - _**[Version - 0.0.3](https://www.npmjs.com/package/ngx-scroll-view)**_ - _Basic and custom animations_
-- _**[Version - 0.1.1](https://www.npmjs.com/package/ngx-scroll-view)**_ - _Pre-animation and pos-animation triggers added_
+- _**[Version - 0.1.3](https://www.npmjs.com/package/ngx-scroll-view)**_ - _Pre-animation and pos-animation triggers added_
 
 ## Installation
 
