@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+
 import { ConfigObject } from './config-object';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NgxScrollViewService {
+  public pre: Subject<any> = new Subject<any>();
+  public pos: Subject<any> = new Subject<any>();
 
   constructor() { }
 
   state: boolean = false;
-  counter=0;
+  counter = 0;
 
-  basicAppear(element: HTMLElement, configObject: ConfigObject) {
+  async basicAppear(element: HTMLElement, configObject: ConfigObject) {
     element.setAttribute("data", this.counter.toString());
     let dynamicStyles = null;
 
@@ -53,7 +57,7 @@ export class NgxScrollViewService {
       default:
         break;
     }
-    
+
     addAnimation(`
                 @keyframes slideInAppear${this.counter} {
                                   0% {
@@ -67,35 +71,52 @@ export class NgxScrollViewService {
                                 }
                 }               
     `);
-    
 
-  /*   addAnimation(`
-                @keyframes slideOutDissappear{
 
-                                0% {
-                                transform: translateY(0);
-                                opacity: 1;
-                                }
-                                98% {
-                                  transform: translateX(20vw);
-                                  opacity: 0;
+    /*   addAnimation(`
+                  @keyframes slideOutDissappear{
+  
+                                  0% {
+                                  transform: translateY(0);
+                                  opacity: 1;
                                   }
-                                100% {
-                                transform: translateY(0);
-                                opacity: 0;
-                }               
-    `); */
+                                  98% {
+                                    transform: translateX(20vw);
+                                    opacity: 0;
+                                    }
+                                  100% {
+                                  transform: translateY(0);
+                                  opacity: 0;
+                  }               
+      `); */
 
 
 
     const functionObserver = (entries, _observer) => {
-      
+
       entries.forEach(entry => {
-        console.log(entry.isVisible);
         if (entry.isIntersecting && this.state == false) {
-          let data=entry.target.getAttribute("data");
+          let data = entry.target.getAttribute("data");
+
+          //pre-show
+          if (!entry.target.getAttribute("data-animation-state")) {
+            entry.target.setAttribute("data-animation-state", 0);
+            this.pre.next({ target: entry.target, state: "pre" })
+          }
+
           //animations appear
           element.style.animation = `slideInAppear${data} ${configObject.time} ease-in-out forwards ${configObject.delay}`;
+          //post-show
+          if ( entry.target.getAttribute("data-animation-state") == 0) {
+            entry.target.setAttribute("data-animation-state", 1);
+            setTimeout(() => {
+              this.pos.next(
+                { target: entry.target, state: "pos" })
+            },
+              this.toMS(entry.target.style.animationDuration))
+
+          }
+
 
         } else {
           //reset animation
@@ -111,5 +132,21 @@ export class NgxScrollViewService {
     });
     observer.observe(element);
     this.counter++;
+  }
+
+  /*   statePreShow(entry){
+      )}
+  
+    statePostShow(entry,timeOut){
+      return new Observable(observer => {
+        setTimeout(() => {
+          let id=entry.target.getAttribute("id");
+          id?observer.next({id:id,state:1}):null;
+        }, timeOut);
+    })}
+   */
+
+  toMS(cssTime: string) {
+    return parseFloat(cssTime) * (/\ds$/.test(cssTime) ? 1000 : 1);
   }
 }
