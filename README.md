@@ -73,7 +73,15 @@ Configuration options list:
 
  You can use like css atributes.
 
+##### Triggers
 
+You can add event listeners like Angular native event listeners, and then you can execute your custom function:
+
+```html
+    <div class="item" scrollView (beforeView)="yourCustomFunction($event)" (afterView)="yourCustomFunction($event)">..</div>
+```
+
+Inside **$event** parameter, you will have the element that is triggering the listeners. 
 ---
 
 ## Credits
