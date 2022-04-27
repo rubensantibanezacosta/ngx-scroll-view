@@ -5,9 +5,17 @@
 Ngx scroll view is a Typescript library for easily animating elements as they enter/leave the viewport.
 
 
+
+
 ## Dependencies
 
 * [Angular](https://angular.io) (*requires* Angular 13+)
+
+
+## Versions
+
+*  _**[Version - 0.0.3](https://www.npmjs.com/package/ngx-scroll-view)**_ - _Basic and custom animations_
+*  _**[Version - 0.1.1](https://www.npmjs.com/package/ngx-scroll-view)**_ - _Pre-animation and pos-animation triggers added_
 
 
 ## Installation
@@ -40,7 +48,7 @@ export class AppModule {
 
 The library uses only one directive: `scrollView`.
 
-### scrollView Directive
+### ScrollView Directive
 
 ---
 
@@ -66,10 +74,10 @@ When no configuration is passed in, the directive uses the default configuration
 
 Configuration options list: 
 
-- delay = "0.5s";
--  time = "1s";
--  origin = "bottom";   e.g.["top", "bottom", "right", "left"]
--  distance = "20px";
+*  `delay : "0.5s",` 
+*  ` time : "1s",` 
+*  `origin : "bottom",` -  _e.g.(`"top"`, `"bottom"`, `"right"`, `"left"`)_
+*  `distance : "20px",`
 
  You can use like css atributes.
 
@@ -87,5 +95,5 @@ Inside **$event** parameter, you will have the element that is triggering the li
 
 ## Credits
 
-`ngx-scroll-view` is built by **[Ruben Santibañez Acosta](https://github.com/rubensantibanezacosta)**.<u> <a href="https://github.com/rubensantibanezacosta/ngx-scroll-view">Put a star in Github Please! 	:star2:</a></u>
+_[ngx-scroll-view](https://www.npmjs.com/package/ngx-scroll-view)_ - is built by [Ruben Santibañez Acosta](https://github.com/rubensantibanezacosta). Put a :star2: in **[Github](https://github.com/rubensantibanezacosta/ngx-scroll-view)** Please! 	
 
