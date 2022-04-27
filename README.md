@@ -78,5 +78,5 @@ Configuration options list:
 
 ## Credits
 
-`ngx-scroll-view` is built by **Ruben Santibañez Acosta**. Put a star in Github Please!
+`ngx-scroll-view` is built by **[Ruben Santibañez Acosta](https://github.com/rubensantibanezacosta)**.<u> <a href="https://github.com/rubensantibanezacosta/ngx-scroll-view">Put a star in Github Please! 	:star2:</a></u>
 
